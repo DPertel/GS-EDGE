@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -156.6, "left": -141.2, "attrs": {} },
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 37.26,
+      "left": -22.3,
+      "rotate": 270,
+      "attrs": {}
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -153.3, "left": -120.6, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -80.4, "left": 3.8, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -130.4,
+      "left": 107.82,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -34.45,
+      "left": 28.8,
+      "attrs": { "value": "10000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.1", "bb1:bn.1", "black", [ "v9.45", "h-182.4" ] ],
+    [ "esp:5V", "bb1:bp.1", "red", [ "v19.05", "h-240", "v-181.5" ] ],
+    [ "bb1:bp.2", "dht1:VCC", "red", [ "v0" ] ],
+    [ "dht1:SDA", "esp:2", "green", [ "v96", "h182.5" ] ],
+    [ "dht1:GND", "bb1:bn.4", "black", [ "v0" ] ],
+    [ "bb1:15b.g", "bb1:bn.12", "green", [ "v0" ] ],
+    [ "dht1:VCC", "bb1:2b.f", "", [ "$bb" ] ],
+    [ "dht1:SDA", "bb1:3b.f", "", [ "$bb" ] ],
+    [ "dht1:NC", "bb1:4b.f", "", [ "$bb" ] ],
+    [ "dht1:GND", "bb1:5b.f", "", [ "$bb" ] ],
+    [ "r1:1", "bb1:16b.g", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:22b.g", "", [ "$bb" ] ],
+    [ "led1:A", "bb1:16b.f", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:15b.f", "", [ "$bb" ] ],
+    [ "bb1:22b.h", "esp:0", "green", [ "h-9.6", "v115.2" ] ],
+    [ "pir1:VCC", "bb1:28b.f", "", [ "$bb" ] ],
+    [ "pir1:OUT", "bb1:29b.f", "", [ "$bb" ] ],
+    [ "pir1:GND", "bb1:30b.f", "", [ "$bb" ] ],
+    [ "pir1:VCC", "bb1:bp.23", "red", [ "v0" ] ],
+    [ "pir1:GND", "bb1:bn.25", "black", [ "v0" ] ],
+    [ "bb1:29b.g", "esp:4", "green", [ "v105.6", "h-19.2" ] ]
+  ],
+  "dependencies": {}
+}

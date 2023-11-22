@@ -1,7 +1,7 @@
 # Projeto SAÚDE
 - Deivison Pertel – RM 550803
 - Eduardo Akira Murata – RM 98713
-
+Link para o projeto -> https://wokwi.com/projects/382113881564584961
 # Projeto Saúde - Monitoramento Remoto
 ## Descrição
 Este projeto utiliza um microcontrolador ESP32 para monitorar a temperatura, umidade e presença em um ambiente. Os dados são enviados para um servidor MQTT, permitindo o acompanhamento remoto das condições do local.
